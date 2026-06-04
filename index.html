@@ -63,11 +63,100 @@
             margin-bottom: 25px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            gap: 30px;
         }
 
         .show-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 40px rgba(245, 87, 108, 0.2);
+        }
+
+        .poster-container {
+            flex-shrink: 0;
+        }
+
+        .poster {
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .poster-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* The Affair Poster - Dramatic Red/Black */
+        .poster-the-affair {
+            background: linear-gradient(135deg, #1a0a0a 0%, #4a1a1a 50%, #2d0a0a 100%);
+            position: relative;
+        }
+
+        .poster-the-affair::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .poster-the-affair .poster-title {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            right: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* My Father and My Son Poster - Turkish Drama */
+        .poster-babam-ve-oglum {
+            background: linear-gradient(135deg, #2d1f0a 0%, #8b6f3a 50%, #4a3510 100%);
+            position: relative;
+        }
+
+        .poster-babam-ve-oglum::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .poster-babam-ve-oglum .poster-title {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            right: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .show-content {
+            flex: 1;
         }
 
         .show-header {
@@ -206,6 +295,13 @@
 
             .show-card {
                 padding: 20px;
+                flex-direction: column;
+            }
+
+            .poster {
+                width: 100%;
+                height: 250px;
+                margin: 0 auto 20px;
             }
         }
     </style>
@@ -222,46 +318,53 @@
             <h2 class="section-title">TV Series</h2>
 
             <div class="show-card">
-                <div class="show-header">
-                    <h3 class="show-title">The Affair</h3>
-                    <div class="show-meta">
-                        <span class="imdb-rating">⭐ 7.9/10</span>
-                        <span class="meta-tag">2014-2019</span>
-                        <span class="meta-tag">Drama</span>
-                        <span class="meta-tag">5 Seasons</span>
+                <div class="poster-container">
+                    <div class="poster poster-the-affair">
+                        <span class="poster-title">THE<br>AFFAIR</span>
                     </div>
                 </div>
+                <div class="show-content">
+                    <div class="show-header">
+                        <h3 class="show-title">The Affair</h3>
+                        <div class="show-meta">
+                            <span class="imdb-rating">⭐ 7.9/10</span>
+                            <span class="meta-tag">2014-2019</span>
+                            <span class="meta-tag">Drama</span>
+                            <span class="meta-tag">5 Seasons</span>
+                        </div>
+                    </div>
 
-                <div class="show-details">
-                    <div class="detail-row">
-                        <span class="detail-label">Creators:</span>
-                        <span class="detail-value">Hagai Levi, Sarah Treem</span>
+                    <div class="show-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Creators:</span>
+                            <span class="detail-value">Hagai Levi, Sarah Treem</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Cast:</span>
+                            <span class="detail-value">Dominic West, Ruth Wilson, Maura Tierney, Julia Goldani Telles</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value">To watch</span>
+                        </div>
                     </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Cast:</span>
-                        <span class="detail-value">Dominic West, Ruth Wilson, Maura Tierney, Julia Goldani Telles</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Status:</span>
-                        <span class="detail-value">To watch</span>
-                    </div>
-                </div>
 
-                <div class="synopsis">
-                    <strong>Synopsis:</strong> An exploration of the psychological effects and the emotional fallout of an extramarital affair. The story follows Noah Solloway, a New York City schoolteacher and novelist, and Alison Bailey, a young waitress recovering from personal tragedy, as they begin an affair in Montauk, Long Island. The show uniquely presents the same events from different characters' perspectives, revealing how memory and perception shape our understanding of truth.
-                </div>
-
-                <div class="streaming-section">
-                    <h4>📺 Where to Watch</h4>
-                    <div class="platform-list">
-                        <span class="platform">fuboTV</span>
-                        <span class="platform">Paramount+ (Premium)</span>
-                        <span class="platform">Amazon Prime Video</span>
-                        <span class="platform free">The Roku Channel (free with ads)</span>
+                    <div class="synopsis">
+                        <strong>Synopsis:</strong> An exploration of the psychological effects and the emotional fallout of an extramarital affair. The story follows Noah Solloway, a New York City schoolteacher and novelist, and Alison Bailey, a young waitress recovering from personal tragedy, as they begin an affair in Montauk, Long Island. The show uniquely presents the same events from different characters' perspectives, revealing how memory and perception shape our understanding of truth.
                     </div>
-                    <p style="color: #888; font-size: 0.9rem;">
-                        <strong>Rent/Buy:</strong> Amazon Video, Apple TV Store, Fandango At Home
-                    </p>
+
+                    <div class="streaming-section">
+                        <h4>📺 Where to Watch</h4>
+                        <div class="platform-list">
+                            <span class="platform">fuboTV</span>
+                            <span class="platform">Paramount+ (Premium)</span>
+                            <span class="platform">Amazon Prime Video</span>
+                            <span class="platform free">The Roku Channel (free with ads)</span>
+                        </div>
+                        <p style="color: #888; font-size: 0.9rem;">
+                            <strong>Rent/Buy:</strong> Amazon Video, Apple TV Store, Fandango At Home
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -271,50 +374,57 @@
             <h2 class="section-title">Movies</h2>
 
             <div class="show-card">
-                <div class="show-header">
-                    <h3 class="show-title">My Father and My Son (Babam ve Oğlum)</h3>
-                    <div class="show-meta">
-                        <span class="imdb-rating">⭐ 8.2/10</span>
-                        <span class="meta-tag">2005</span>
-                        <span class="meta-tag">Drama</span>
-                        <span class="meta-tag">🇹🇷 Turkey</span>
+                <div class="poster-container">
+                    <div class="poster poster-babam-ve-oglum">
+                        <span class="poster-title">BABAM<br>VE OĞLUM<br><small>My Father<br>and My Son</small></span>
                     </div>
                 </div>
+                <div class="show-content">
+                    <div class="show-header">
+                        <h3 class="show-title">My Father and My Son (Babam ve Oğlum)</h3>
+                        <div class="show-meta">
+                            <span class="imdb-rating">⭐ 8.2/10</span>
+                            <span class="meta-tag">2005</span>
+                            <span class="meta-tag">Drama</span>
+                            <span class="meta-tag">🇹🇷 Turkey</span>
+                        </div>
+                    </div>
 
-                <div class="show-details">
-                    <div class="detail-row">
-                        <span class="detail-label">Director:</span>
-                        <span class="detail-value">Çagan Irmak</span>
+                    <div class="show-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Director:</span>
+                            <span class="detail-value">Çagan Irmak</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Cast:</span>
+                            <span class="detail-value">Çetin Tekindor, Fikret Kuşkan, Hümeyra, Ege Tanman</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Language:</span>
+                            <span class="detail-value">Turkish</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value">To watch</span>
+                        </div>
                     </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Cast:</span>
-                        <span class="detail-value">Çetin Tekindor, Fikret Kuşkan, Hümeyra, Ege Tanman</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Language:</span>
-                        <span class="detail-value">Turkish</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Status:</span>
-                        <span class="detail-value">To watch</span>
-                    </div>
-                </div>
 
-                <div class="synopsis">
-                    <strong>Synopsis:</strong> A left-wing journalist whose wife died while giving birth to his son during the 1980 military coup in Turkey returns to his family's farm. Estranged from his father for turning his back on the family and wasting his life with political activism, he tries to reconnect with him so that his son will have a place to live as his health is deteriorating due to the extensive torture he had to endure. The film explores themes of family, reconciliation, and the impact of political upheaval on ordinary lives.
-                </div>
-
-                <div class="streaming-section">
-                    <h4>🎬 Where to Watch</h4>
-                    <div class="platform-list">
-                        <span class="platform free">Kanopy (free)</span>
+                    <div class="synopsis">
+                        <strong>Synopsis:</strong> A left-wing journalist whose wife died while giving birth to his son during the 1980 military coup in Turkey returns to his family's farm. Estranged from his father for turning his back on the family and wasting his life with political activism, he tries to reconnect with him so that his son will have a place to live as his health is deteriorating due to the extensive torture he had to endure. The film explores themes of family, reconciliation, and the impact of political upheaval on ordinary lives.
                     </div>
-                    <p style="color: #888; font-size: 0.9rem;">
-                        <strong>Rent/Buy:</strong> Apple TV Store, Amazon Video
-                    </p>
-                    <p style="color: #888; font-size: 0.9rem; margin-top: 10px;">
-                        <strong>Awards:</strong> Best Film at Antalya Golden Orange Film Festival
-                    </p>
+
+                    <div class="streaming-section">
+                        <h4>🎬 Where to Watch</h4>
+                        <div class="platform-list">
+                            <span class="platform free">Kanopy (free)</span>
+                        </div>
+                        <p style="color: #888; font-size: 0.9rem;">
+                            <strong>Rent/Buy:</strong> Apple TV Store, Amazon Video
+                        </p>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 10px;">
+                            <strong>Awards:</strong> Best Film at Antalya Golden Orange Film Festival
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
