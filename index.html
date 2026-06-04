@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 My Watchlist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .watchlist-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #f5576c;
+            border-bottom: 2px solid #f5576c;
+            padding-bottom: 10px;
+        }
+
+        .show-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .show-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(245, 87, 108, 0.2);
+        }
+
+        .show-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .show-title {
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .show-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: rgba(245, 87, 108, 0.2);
+            color: #f5576c;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .imdb-rating {
+            background: #f5c518;
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .show-details {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .detail-label {
+            color: #888;
+            min-width: 100px;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: #e0e0e0;
+        }
+
+        .synopsis {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .synopsis strong {
+            color: #f5576c;
+        }
+
+        .streaming-section {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .streaming-section h4 {
+            color: #f5576c;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .platform-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .platform {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .platform.free {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #f5576c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .show-title {
+                font-size: 1.4rem;
+            }
+
+            .show-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 My Watchlist</h1>
+            <p>Personal movie and TV series collection with ratings and streaming info</p>
+        </header>
+
+        <div class="watchlist-section">
+            <h2 class="section-title">TV Series</h2>
+
+            <div class="show-card">
+                <div class="show-header">
+                    <h3 class="show-title">The Affair</h3>
+                    <div class="show-meta">
+                        <span class="imdb-rating">⭐ 7.9/10</span>
+                        <span class="meta-tag">2014-2019</span>
+                        <span class="meta-tag">Drama</span>
+                        <span class="meta-tag">5 Seasons</span>
+                    </div>
+                </div>
+
+                <div class="show-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Creators:</span>
+                        <span class="detail-value">Hagai Levi, Sarah Treem</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Cast:</span>
+                        <span class="detail-value">Dominic West, Ruth Wilson, Maura Tierney, Julia Goldani Telles</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value">To watch</span>
+                    </div>
+                </div>
+
+                <div class="synopsis">
+                    <strong>Synopsis:</strong> An exploration of the psychological effects and the emotional fallout of an extramarital affair. The story follows Noah Solloway, a New York City schoolteacher and novelist, and Alison Bailey, a young waitress recovering from personal tragedy, as they begin an affair in Montauk, Long Island. The show uniquely presents the same events from different characters' perspectives, revealing how memory and perception shape our understanding of truth.
+                </div>
+
+                <div class="streaming-section">
+                    <h4>📺 Where to Watch</h4>
+                    <div class="platform-list">
+                        <span class="platform">fuboTV</span>
+                        <span class="platform">Paramount+ (Premium)</span>
+                        <span class="platform">Amazon Prime Video</span>
+                        <span class="platform free">The Roku Channel (free with ads)</span>
+                    </div>
+                    <p style="color: #888; font-size: 0.9rem;">
+                        <strong>Rent/Buy:</strong> Amazon Video, Apple TV Store, Fandango At Home
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Last updated: June 4, 2026 | 
+                <a href="https://github.com/muhtarclaw/watchlist" target="_blank">View on GitHub</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
